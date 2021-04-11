@@ -1,0 +1,33 @@
+<div><h2>
+  {{pageTitle}}
+</h2>
+</div>
+
+<table *ngIf='employeeList' border="1" style="border:solid 1px black">
+  <thead>
+      <tr style="border:solid 1px black">
+          <td>ID</td>
+          <td>First Name</td>
+          <td>Last Name</td>
+          <td>Department</td>
+      </tr>
+  </thead>
+  <tr *ngFor='let employee of employeeList' style="border:solid 1px black">
+      <td><label>{{employee.id}}</label></td>
+      <td><label>{{employee.firstName}}</label></td>
+      <td><label>{{employee.lastname}}</label></td>
+      <td><label>{{employee.department}}</label></td>
+      <td><a routerLink="/employee-list/employee-detail/{{employee.id}}">Details</a></td>
+      <td><button (click)="deleteEmployee(employee)">Delete</button></td>
+      <td><a routerLink="/employee-list/employee-edit/{{employee.id}}">Edit</a> </td>
+  </tr>
+  <tr *ngIf='isAddEmployee' style="border:solid 1px black">
+      <td><input type="number" [(ngModel)]="employeeId" /></td>
+      <td><input type="text" [(ngModel)]="firstName" /></td>
+      <td><input type="text" [(ngModel)]="lastname" /></td>
+      <td><input type="text" [(ngModel)]="department"/></td>
+      <td><input type="button" (click)="SaveData()" value="Save"/></td>
+      <td><input type="button" (click)="Cancel()" value="Cancel" /></td>
+  </tr>
+</table>
+<button (click)="addEmployee()">Add Employee</button>

@@ -1,0 +1,41 @@
+.rounded-btn {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    color: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    font-size: 18px;
+    line-height: 40px;
+    padding: 0 25px;
+}
+.rounded-btn:hover,
+.rounded-btn:focus,
+.rounded-btn:active,
+.rounded-btn:visited {
+    color: rgba(255, 255, 255, 1);
+    border: 2px solid rgba(255, 255, 255, 1);
+    outline: none;
+}
+
+.form-group {
+    padding: 8px 0;
+    input::-webkit-input-placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    input:-moz-placeholder {
+        /* Firefox 18- */
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    input::-moz-placeholder {
+        /* Firefox 19+ */
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    input:-ms-input-placeholder {
+        color: rgba(255, 255, 255, 0.6) !important;
+    }
+}
+.form-content {
+    padding: 20px 0;
+}

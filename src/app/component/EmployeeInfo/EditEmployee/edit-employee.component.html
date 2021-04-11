@@ -1,0 +1,24 @@
+<div >
+    <h1 *ngIf="firstName">Welcome {{this.firstName}} {{this.lastName}}</h1>
+        <form [formGroup] = 'editForm' (ngSubmit) = "onSubmit(editForm.value)" >
+                <div class="form-content">
+                    <div class="form-group">
+                        <input name="firstName" formControlName="firstName" placeholder="First Name" [(ngModel)]="firstName"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="lastName" formControlName="lastName" placeholder="Last Name" [(ngModel)]="lastName"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="department" formControlName="department" placeholder="Department" [(ngModel)]="department"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="address" formControlName="address" placeholder="Address" [(ngModel)]="address"/>
+                    </div>
+                    <div class="form-group">
+                        <input name="country" formControlName="country" placeholder="Country" [(ngModel)]="country"/>
+                    </div>
+                </div>
+                <button class="btn" [disabled] = 'editForm.invalid'>Edit</button>
+                &nbsp;
+            </form>
+        </div>
